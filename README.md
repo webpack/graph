@@ -8,7 +8,7 @@ You can generate them by calling webpack with `--json`.
 
 ## Command Line
 
-`webpack-graph [<stats.json> [output.svg]]`
+`webpack-graph [<stats.json> [<output.svg>]]`
 
 If you don't provide the files as parameters `webpack-graph` will read them from `stdin` or write it to `stdout`.
 
@@ -29,3 +29,8 @@ If you don't provide the files as parameters `webpack-graph` will read them from
  * Red lines display requires *to* other modules/contexts
  * Brown lines display requires *to* and *from* other modules/contexts
 
+### Example
+
+![webpack-graph](http://webpack.github.com/webpack/examples/code-splitted-require.context-amd/graph.svg)
+
+See more examples in webpack examples
