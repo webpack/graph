@@ -1,0 +1,30 @@
+{
+	"name": "webpack-graph",
+	"version": "0.1.0",
+	"author": "Tobias Koppers @sokra",
+	"description": "Converts JSON stats from webpack to a nice SVG-Image.",
+	"dependencies": {
+		"optimist": "0.2.x",
+		"webpack": ">=0.7.2"
+	},
+	"licenses": [
+		{
+			"type": "MIT",
+			"url": "http://www.opensource.org/licenses/mit-license.php"
+		}
+	],
+	"devDependencies": {
+		"mocha": "*",
+		"should": "*"
+	},
+	"engines": {
+		"node":  ">=0.1.30"
+	},
+	"homepage": "http://github.com/webpack/graph",
+	"main": "lib/webpack-graph.js",
+	"bin": "./bin/webpack-graph.js",
+	"scripts": {
+		"test": "node node_modules/mocha/bin/_mocha --reporter spec"
+	},
+	"license": "MIT"
+}
