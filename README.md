@@ -14,6 +14,14 @@ If you don't provide the files as parameters `webpack-graph` will read them from
 
 `--context <path>` - Shorten filenames according to this context
 
+`--width <number>` - The max width of the output svg
+
+`--height <number>` - The max height of the output svg
+
+`--steps <number>` - Limit the simulation steps
+
+`--interactive` - Emit simulation code to browser
+
 ## Resulting Image
 
 * Circles are modules/contexts
@@ -31,6 +39,8 @@ If you don't provide the files as parameters `webpack-graph` will read them from
 
 ### Example
 
-![webpack-graph](http://webpack.github.com/webpack/examples/code-splitted-require.context-amd/graph.svg)
+![webpack-graph](http://webpack.github.com/graph/example/webpackBrowsertest.svg)
+
+[Interactive version](http://webpack.github.com/graph/example/webpackBrowsertestInteractive.svg)
 
 See more examples in webpack examples
