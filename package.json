@@ -1,6 +1,6 @@
 {
 	"name": "webpack-graph",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"author": "Tobias Koppers @sokra",
 	"description": "Converts JSON stats from webpack to a nice SVG-Image.",
 	"dependencies": {
@@ -24,6 +24,7 @@
 	"main": "lib/webpack-graph.js",
 	"bin": "./bin/webpack-graph.js",
 	"scripts": {
+		"postinstall": "node bin/webpack lib/interactive.js js/interactive.js --colors --min --libary wpg",
 		"test": "node node_modules/mocha/bin/_mocha --reporter spec"
 	},
 	"license": "MIT"

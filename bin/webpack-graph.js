@@ -15,6 +15,14 @@ var argv = require("optimist")
 	.string("context")
 	.describe("context", "Shorten filenames according to this context")
 
+	.boolean("interactive")
+	.describe("interactive", "Emit simulation code to browser")
+
+	.describe("steps", "Limit the simulation steps")
+
+	.describe("width", "The max width of the output svg")
+	.describe("height", "The max height of the output svg")
+
 	.demand(0)
 	.argv;
 
@@ -41,16 +49,31 @@ if(argv.context) {
 	options.nameShortener = require("webpack/lib/createFilenameShortener")(path.resolve(argv.context));
 }
 
+if(argv.interactive) {
+	options.interactive = true;
+}
+
+if(argv.steps !== undefined) {
+	options.maxSteps = argv.steps;
+}
+
+if(argv.height) {
+	options.height = argv.height;
+}
+
+if(argv.width) {
+	options.height = argv.width;
+}
+
 var data = [];
 inputStream.on("data", data.push.bind(data));
 inputStream.on("end", function() {
 	data = data.join("");
 
 	var webpackGraph = require("../lib/webpack-graph.js");
-	options.outputStream = outputStream;
 	var svg = webpackGraph(JSON.parse(data), options);
 
-	if(svg) outputStream.write(svg, "utf-8");
+	outputStream.write(svg, "utf-8");
 	if(outputStream != process.stdout) outputStream.end();
 });
 
