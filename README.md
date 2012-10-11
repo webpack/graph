@@ -22,6 +22,12 @@ If you don't provide the files as parameters `webpack-graph` will read them from
 
 `--interactive` - Emit simulation code to browser
 
+`--color-by-loaders` - Choose colors by loaders
+
+`--color-by-module` - Choose colors by loaders
+
+`--color-switch` - Chosse colors by hovering
+
 ## Resulting Image
 
 * Circles are modules/contexts
@@ -36,6 +42,11 @@ If you don't provide the files as parameters `webpack-graph` will read them from
  * Green lines display requires *from* other modules/contexts
  * Red lines display requires *to* other modules/contexts
  * Brown lines display requires *to* and *from* other modules/contexts
+* In interactive mode
+ * You can drag modules/contexts with your mouse
+ * Layouting happens live
+ * Only tested on latest Chrome and Firefox
+ * Older browsers are not supported
 
 ### Example
 

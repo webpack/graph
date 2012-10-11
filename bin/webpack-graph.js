@@ -18,6 +18,15 @@ var argv = require("optimist")
 	.boolean("interactive")
 	.describe("interactive", "Emit simulation code to browser")
 
+	.boolean("color-by-loaders")
+	.describe("color-by-loaders", "Choose colors by loaders")
+
+	.boolean("color-by-module")
+	.describe("color-by-module", "Choose colors by module")
+
+	.boolean("color-switch")
+	.describe("color-switch", "Chosse colors by hovering")
+
 	.describe("steps", "Limit the simulation steps")
 
 	.describe("width", "The max width of the output svg")
@@ -62,7 +71,19 @@ if(argv.height) {
 }
 
 if(argv.width) {
-	options.height = argv.width;
+	options.width = argv.width;
+}
+
+if(argv["color-by-loaders"]) {
+	options.colorByLoaders = true;
+}
+
+if(argv["color-by-module"]) {
+	options.colorByModule = true;
+}
+
+if(argv["color-switch"]) {
+	options.colorSwitch = true;
 }
 
 var data = [];
