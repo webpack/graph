@@ -1,6 +1,6 @@
 {
 	"name": "webpack-graph",
-	"version": "0.1.3",
+	"version": "0.1.4",
 	"author": "Tobias Koppers @sokra",
 	"description": "Converts JSON stats from webpack to a nice SVG-Image.",
 	"dependencies": {
